@@ -198,11 +198,20 @@ type
     # oposite of showticklabels
     hideticklabels*: bool
 
+  Annotation* = ref object
+    x*: int
+    xshift*: int
+    y*: int
+    yshift*: int
+    text*: string
+    showarrow*: bool
+
   Layout* = ref object
     title*: string
     width*: int
     height*: int
     hovermode*: HoverMode
+    annotations*: seq[Annotation]
     autosize*: bool
     showlegend*: bool
     xaxis*: Axis
