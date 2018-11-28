@@ -4,12 +4,12 @@ import json
 
 suite "Annotation Json tests":
   test "make Json object":
-    let 
+    let
         a = Annotation(x:1, xshift:10, y:2, yshift:20, text:"text")
-        expected = %*{ "x": 1
-                    , "xshift": 10
-                    , "y": 2
-                    , "yshift": 20
+        expected = %*{ "x": 1.0
+                    , "xshift": 10.0
+                    , "y": 2.0
+                    , "yshift": 20.0
                     , "text": "text"
                     , "showarrow": false
                     }
@@ -18,10 +18,10 @@ suite "Annotation Json tests":
   test "make Json object less parameters":
     let 
         a = Annotation(x:1,y:2,text:"text")
-        expected = %*{ "x": 1
-                    , "xshift": 0
-                    , "y": 2
-                    , "yshift": 0
+        expected = %*{ "x": 1.0
+                    , "xshift": 0.0
+                    , "y": 2.0
+                    , "yshift": 0.0
                     , "text": "text"
                     , "showarrow": false
                     }
@@ -47,10 +47,10 @@ suite "Layout Json tests":
                                 , "autorange": true
                                 }
                      , "hovermode": "closest"
-                     , "annotations": [ { "x": 1
-                                        , "xshift": 10
-                                        , "y": 2
-                                        , "yshift": 20
+                     , "annotations": [ { "x": 1.0
+                                        , "xshift": 10.0
+                                        , "y": 2.0
+                                        , "yshift": 20.0
                                         , "text": "text"
                                         , "showarrow": false
                                         }
@@ -60,7 +60,6 @@ suite "Layout Json tests":
     check r == expected
   test "Layout without Annotations":
     let
-        a = Annotation(x:1, xshift:10, y:2, yshift:20, text:"text")
         layout = Layout(title: "title", width: 10, height: 10,
                         xaxis: Axis(title: "x"),
                         yaxis: Axis(title: "y"),

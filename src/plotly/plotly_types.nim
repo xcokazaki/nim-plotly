@@ -209,10 +209,10 @@ type
     hideticklabels*: bool
 
   Annotation* = ref object
-    x*: int
-    xshift*: int
-    y*: int
-    yshift*: int
+    x*: float
+    xshift*: float
+    y*: float
+    yshift*: float
     text*: string
     showarrow*: bool
 
